@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AVANZATOTO - Official Super Premium Portal</title>
     
-    <!-- 🖼️ Ikon Logo (Favicon) untuk Tab Browser (32x32 px) -->
+    <!-- 🖼️ Favicon Tab Browser (32x32 px) -->
     <link rel="icon" href="favicon.ico" sizes="32x32">
     
-    <!-- 🖼️ SEO & Link Preview Thumbnail (1200x630 px untuk WA/FB/Telegram) -->
+    <!-- 🖼️ Meta OG & Twitter Card agar Preview Gambar Muncul DI BAWAH TEKS (Ukuran Besar) Saat Share WA/FB/TG -->
     <meta property="og:title" content="AVANZATOTO - Official Super Premium Portal">
     <meta property="og:description" content="Situs terpercaya dengan winrate tertinggi & jaminan layanan VIP 24 jam.">
     <meta property="og:image" content="link-preview-image.jpg">
@@ -16,20 +16,25 @@
     <meta property="og:image:height" content="630">
     <meta property="og:type" content="website">
 
-    <!-- Font Google Poppins & Cinzel untuk Kesan Super Premium -->
+    <!-- Tag Khusus Twitter/WA/Telegram agar Gambar Besar & di Bawah Teks -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AVANZATOTO - Official Super Premium Portal">
+    <meta name="twitter:description" content="Situs terpercaya dengan winrate tertinggi & jaminan layanan VIP 24 jam.">
+    <meta name="twitter:image" content="link-preview-image.jpg">
+
+    <!-- Font Google Poppins & Cinzel -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome -->
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* CSS Reset & Variables */
         :root {
             --gold-light: #f3e5ab;
             --gold-accent: #d4af37;
             --gold-hover: #ffdf00;
             --text-main: #ffffff;
             --text-muted: #a0aabf;
-            --glass-border: rgba(212, 175, 55, 0.3);
+            --glass-border: rgba(212, 175, 55, 0.35);
         }
 
         * {
@@ -48,7 +53,7 @@
             position: relative;
         }
 
-        /* --- BACKGROUND-BESAR.JPG (STABIL DI ALL DEVICE, DUPLIKAT BANYAK, JELAS TERANG) --- */
+        /* --- BACKGROUND-BESAR.JPG (DI-DUPLIKAT BANYAK & TERANG) --- */
         .bg-fixed {
             position: fixed;
             top: 0;
@@ -61,24 +66,25 @@
             z-index: -2;
         }
 
+        /* Overlay Ditipiskan Agar Background Sangat Kelihatan */
         .bg-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: linear-gradient(135deg, rgba(5, 7, 13, 0.35) 0%, rgba(26, 35, 58, 0.25) 100%);
-            backdrop-filter: brightness(1.1);
+            background: rgba(5, 7, 13, 0.25); /* Sangat Transparan */
+            backdrop-filter: brightness(1.05);
             z-index: -1;
         }
 
-        /* --- SIDEBAR / MENU NAVIGASI --- */
+        /* --- SIDEBAR MENU (TRANSPARAN SEHINGGA BACKGROUND KELIHATAN) --- */
         .sidebar {
             width: 340px;
             min-width: 340px;
-            background-color: rgba(5, 7, 13, 0.65);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
+            background-color: rgba(5, 7, 13, 0.45); /* Transparan pas */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-right: 1px solid var(--glass-border);
             padding: 35px 22px;
             display: flex;
@@ -89,7 +95,6 @@
             overflow-y: auto;
         }
 
-        /* Custom Scrollbar Sidebar */
         .sidebar::-webkit-scrollbar {
             width: 4px;
         }
@@ -98,7 +103,7 @@
             border-radius: 4px;
         }
 
-        /* --- LOGO AVANZATOTO SUPER PREMIUM --- */
+        /* --- LOGO AVANZATOTO --- */
         .brand-logo {
             font-family: 'Cinzel', serif;
             font-size: 28px;
@@ -112,7 +117,6 @@
             -webkit-text-fill-color: transparent;
             animation: shineNeon 3.5s linear infinite;
             filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));
-            position: relative;
         }
 
         @keyframes shineNeon {
@@ -132,23 +136,41 @@
 
         .menu-list li {
             width: 100%;
-            display: block;
         }
 
+        /* --- DESAIN KOLOM TOMBOL LEBIH BAGUS & KELIHATAN JELAS BISA DI-KLIK --- */
         .menu-list a {
             display: flex;
             align-items: center;
             text-decoration: none;
             color: var(--text-main);
-            padding: 10px 16px;
+            padding: 12px 16px;
             width: 100%;
-            border-radius: 12px;
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(0, 0, 0, 0.35) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.5); /* Border emas tegas */
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 4px 12px rgba(0, 0, 0, 0.4);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             box-sizing: border-box;
             overflow: hidden;
+            cursor: pointer;
+        }
+
+        /* Efek Kilau / Shimmer pada Tombol */
+        .menu-list a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 223, 0, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .menu-list a:hover::before {
+            left: 100%;
         }
 
         .menu-list a i {
@@ -159,6 +181,7 @@
             text-align: center;
             color: var(--gold-accent);
             transition: transform 0.3s ease;
+            filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.8));
         }
 
         .menu-text {
@@ -171,7 +194,7 @@
 
         .menu-title {
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 700;
             color: #ffffff;
             line-height: 1.2;
             white-space: nowrap;
@@ -180,7 +203,7 @@
         .menu-sub {
             font-size: 10.5px;
             color: var(--gold-light);
-            opacity: 0.8;
+            opacity: 0.9;
             margin-top: 3px;
             font-weight: 400;
             white-space: nowrap;
@@ -188,24 +211,20 @@
             text-overflow: ellipsis;
         }
 
+        /* Hover Effect Tombol */
         .menu-list a:hover {
-            background: rgba(212, 175, 55, 0.25);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
             border-color: var(--gold-hover);
-            transform: translateX(6px);
-            box-shadow: 0 4px 25px rgba(212, 175, 55, 0.4);
+            transform: translateX(6px) scale(1.01);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
         }
 
         .menu-list a:hover i {
-            transform: scale(1.2);
+            transform: scale(1.25);
             color: var(--gold-hover);
         }
 
-        .menu-list a:hover .menu-sub {
-            color: #ffffff;
-            opacity: 1;
-        }
-
-        /* --- ARTIKEL SEO PRO DI BAWAH TOMBOL --- */
+        /* --- SEKSI ARTIKEL SEO (TRANSPARAN) --- */
         .seo-section {
             border-top: 1px solid var(--glass-border);
             padding-top: 20px;
@@ -213,6 +232,9 @@
             display: flex;
             flex-direction: column;
             gap: 14px;
+            background: rgba(0, 0, 0, 0.2); /* Transparan */
+            padding: 15px;
+            border-radius: 12px;
         }
 
         .seo-title {
@@ -220,7 +242,6 @@
             font-weight: 700;
             color: var(--gold-hover);
             line-height: 1.4;
-            letter-spacing: 0.3px;
         }
 
         .seo-subtitle {
@@ -228,12 +249,11 @@
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 4px;
-            letter-spacing: 0.2px;
         }
 
         .seo-text {
             font-size: 11px;
-            color: #c4cede;
+            color: #d8e2f0;
             line-height: 1.55;
             font-weight: 300;
             text-align: justify;
@@ -245,7 +265,7 @@
         }
 
         .sidebar-footer {
-            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
             padding-top: 18px;
             margin-top: 20px;
         }
@@ -257,7 +277,6 @@
             text-decoration: none;
             font-size: 12px;
             margin-bottom: 8px;
-            transition: color 0.3s;
         }
 
         .sidebar-footer a:hover {
@@ -276,39 +295,27 @@
             min-height: 100vh;
         }
 
-        .decoration-circle {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(0,0,0,0) 65%);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        /* --- CONTAINER DISPLAY --- */
         .display-container {
             width: 100%;
-            max-width: 540px;
+            max-width: 560px;
             display: flex;
             flex-direction: column;
             align-items: center;
             z-index: 2;
         }
 
+        /* BOX PROMOSI (TRANSPARAN AGAR BACKGROUND KELIHATAN) */
         .promo-header {
             text-align: center;
-            margin-bottom: 30px;
-            background: rgba(5, 7, 13, 0.65);
-            padding: 20px;
+            margin-bottom: 25px;
+            background: rgba(5, 7, 13, 0.4); /* Transparan */
+            padding: 22px;
             border-radius: 20px;
             border: 1px solid var(--glass-border);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            width: 100%;
         }
 
         .vip-badge {
@@ -325,17 +332,35 @@
             margin-bottom: 15px;
         }
 
+        /* 🔥 EFEK TEKS BERGERAK DI DALAM HURUF 🔥 */
         .promo-header h2 {
             font-family: 'Cinzel', serif;
-            font-size: 24px;
+            font-size: 23px;
             font-weight: 900;
-            letter-spacing: 1.5px;
-            background: linear-gradient(180deg, #ffffff 0%, #ffd700 70%, #b8860b 100%);
+            letter-spacing: 1.2px;
+            line-height: 1.4;
+            margin-bottom: 12px;
+
+            /* Gradient Bergerak Khusus DI DALAM Huruf */
+            background: linear-gradient(
+                90deg, 
+                #ffffff 0%, 
+                #ffd700 25%, 
+                #ffffff 50%, 
+                #b8860b 75%, 
+                #ffffff 100%
+            );
+            background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 4px 25px rgba(212, 175, 55, 0.5);
-            margin-bottom: 12px;
-            line-height: 1.4;
+            animation: textShineInside 4s linear infinite; /* Animasi bergerak dalam huruf */
+            filter: drop-shadow(0 2px 10px rgba(212, 175, 55, 0.4));
+        }
+
+        /* Keyframes Gerakan Warna di Dalam Huruf */
+        @keyframes textShineInside {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
         }
 
         .promo-header p {
@@ -351,10 +376,12 @@
             font-weight: 700;
         }
 
-        /* --- DISPLAY FOTO 3D --- */
+        /* --- DISPLAY FOTO 3D FLEKSIBEL (MELAR/MENYUSUT PAS BOUNDARY) --- */
         .display-card {
             width: 100%;
-            height: 680px;
+            max-width: 100%;
+            aspect-ratio: 4 / 5; /* Menjaga rasio sempurna agar melar/menyusut proporsional */
+            max-height: 620px;
             position: relative;
             perspective: 1200px;
             display: flex;
@@ -382,13 +409,16 @@
             overflow: hidden;
             border: 2px solid var(--gold-accent);
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), 0 0 30px rgba(212, 175, 55, 0.4);
+            background: rgba(5, 7, 13, 0.5); /* Latar foto transparan */
         }
 
+        /* Foto Tidak Akan Terpotong Saat Di-zoom/Perkecil */
         .flipper-card .front img,
         .flipper-card .back img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: cover; /* Pas mengisi frame tanpa gepeng/terpotong */
+            display: block;
         }
 
         .flipper-card .back {
@@ -406,14 +436,14 @@
             background: radial-gradient(ellipse at center, rgba(255, 223, 0, 0.8) 0%, rgba(212, 175, 55, 0.25) 60%, rgba(0,0,0,0) 80%);
             border-radius: 50%;
             position: absolute;
-            bottom: 10px;
+            bottom: 5px;
             transform: rotateX(75deg);
             box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6), inset 0 0 25px rgba(255, 223, 0, 0.7);
             border: 1px solid rgba(255, 223, 0, 0.5);
             z-index: 1;
         }
 
-        /* --- RESPONSIVE UNTUK LAYAR KECIL / HP --- */
+        /* --- RESPONSIVE UNTUK HP & TABLET --- */
         @media (max-width: 900px) {
             body { 
                 flex-direction: column;
@@ -428,42 +458,32 @@
                 border-top: 1px solid var(--glass-border); 
                 padding: 25px 20px; 
                 order: 2;
-                background-color: rgba(5, 7, 13, 0.85);
-            }
-
-            .menu-list { 
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-                gap: 10px; 
+                background-color: rgba(5, 7, 13, 0.6);
             }
 
             .main-content { 
                 order: 1;
                 min-height: auto;
-                padding: 30px 15px;
-            }
-
-            .display-card { 
-                height: 520px; 
+                padding: 25px 15px;
             }
 
             .promo-header h2 {
-                font-size: 19px;
+                font-size: 18px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- BACKGROUND BESAR TETAP -->
+    <!-- BACKGROUND BESAR TERANG & DUPLIKAT -->
     <div class="bg-fixed"></div>
     <div class="bg-overlay"></div>
 
-    <!-- SIDEBAR NAVIGASI -->
+    <!-- SIDEBAR NAVIGASI TRANSPARAN -->
     <aside class="sidebar">
         <div class="brand-logo">AVANZATOTO</div>
         
-        <!-- KOLOM TOMBOL MENU VIP (DIJAGA TETAP LENGKAP & TIDAK DIHILANGKAN) -->
+        <!-- KOLOM TOMBOL INTERAKTIF ELEGAN -->
         <ul class="menu-list">
             <li>
                 <a href="https://avanzatoto.com" title="Galeri VIP 3D - Fitur Visual Slot & Togel Premium AVANZATOTO" aria-label="Galeri VIP 3D">
@@ -539,7 +559,7 @@
             </li>
         </ul>
 
-        <!-- 📝 SEKSI PENJELASAN ARTIKEL SEO TERBARU (DITAMBAHKAN DI BAWAH TOMBOL) -->
+        <!-- SEKSI ARTIKEL SEO (DI BAWAH TOMBOL) -->
         <div class="seo-section">
             <h3 class="seo-title">AVANZATOTO: Portal Resmi Link Alternatif Login & Daftar VIP 2026</h3>
             <p class="seo-text">
@@ -568,20 +588,19 @@
         </div>
     </aside>
 
-    <!-- AREA UTAMA -->
+    <!-- AREA UTAMA DISPLAY FOTO -->
     <main class="main-content">
-        <div class="decoration-circle"></div>
-        
         <div class="display-container">
             <div class="promo-header">
                 <div class="vip-badge">🔥 OFFICIAL SUPER VIP PORTAL 🔥</div>
+                <!-- TEKS DENGAN EFEK KILAU KINCLONG BERGERAK DI DALAM HURUF -->
                 <h2>SITUS TERPERCAYA DENGAN WINRATE HIGHEST 98.8% & JAMINAN WD PASTI CAIR</h2>
                 <p>
                     Bergabunglah sekarang dan rasakan sensasi permainan kelas Sultan dengan bonus melimpah, event scatter terbesar, serta layanan <span class="highlight">Prioritas VIP 24 Jam nonstop!</span>
                 </p>
             </div>
 
-            <!-- FOTO 3D BERPUTAR HALUS -->
+            <!-- FOTO 3D RESPONSIF FLEKSIBEL (TIDAK TERPOTONG SAAT ZOOM/PERKECIL) -->
             <div class="display-card">
                 <div class="flipper-card">
                     <div class="front">
