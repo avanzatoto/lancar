@@ -51,9 +51,11 @@
             color: var(--text-main);
             display: flex;
             min-height: 100vh;
-            overflow-x: hidden;
+            /* PERBAIKAN 1: Izinkan scroll horizontal jika di-zoom berlebih agar kanan tidak terpotong */
+            overflow-x: auto;
             overflow-y: auto;
             position: relative;
+            align-items: flex-start;
         }
 
         /* --- BACKGROUND-BESAR.JPG (DI-DUPLIKAT BANYAK & TERANG) --- */
@@ -94,8 +96,12 @@
             flex-direction: column;
             justify-content: flex-start;
             z-index: 10;
+            height: 100vh;
             max-height: 100vh;
             overflow-y: auto;
+            /* PERBAIKAN 2: Sticky positioning untuk menjaga kestabilan tata letak */
+            position: sticky;
+            top: 0;
         }
 
         .sidebar::-webkit-scrollbar {
@@ -271,6 +277,8 @@
             border-top: 1px solid rgba(212, 175, 55, 0.2);
             padding-top: 18px;
             margin-top: 20px;
+            /* PERBAIKAN 3: Memberi margin bawah besar agar teks paling bawah tidak pernah terpotong saat scroll di-zoom */
+            margin-bottom: 50px;
         }
 
         .sidebar-footer a {
@@ -296,6 +304,8 @@
             position: relative;
             padding: 40px 20px;
             min-height: 100vh;
+            /* PERBAIKAN 4: Menjaga kontainer kanan tidak gepeng saat layar sempit */
+            min-width: 320px;
         }
 
         .display-container {
@@ -344,7 +354,6 @@
             line-height: 1.4;
             margin-bottom: 12px;
 
-            /* Gradient Bergerak Khusus DI DALAM Huruf */
             background: linear-gradient(
                 90deg, 
                 #ffffff 0%, 
@@ -454,12 +463,18 @@
             .sidebar { 
                 width: 100%; 
                 min-width: 100%;
+                height: auto;
                 max-height: none;
+                position: relative;
                 border-right: none; 
                 border-top: 1px solid var(--glass-border); 
                 padding: 25px 20px; 
                 order: 2;
                 background-color: rgba(5, 7, 13, 0.6);
+            }
+
+            .sidebar-footer {
+                margin-bottom: 0px;
             }
 
             .main-content { 
